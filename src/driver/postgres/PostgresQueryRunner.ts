@@ -4247,7 +4247,7 @@ export class PostgresQueryRunner
             `CREATE ${index.isUnique ? "UNIQUE " : ""}INDEX "${
                 index.name
             }" ON ${this.escapePath(table)} ${
-                index.isSpatial ? "USING GiST " : "GIN"
+                index.isSpatial ? "USING GiST " : "USING GIN"
             }(${columns}) ${index.where ? "WHERE " + index.where : ""}`,
         )
     }
